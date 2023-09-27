@@ -17,4 +17,4 @@ Bienvenido al Simulador de Examen PAA, una herramienta en línea diseñada para 
 1. Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone https://github.com/tuusuario/simulador-examen-paa.git
+   git clone https://github.com/JorgeML01/simulador-examen-paa.git
