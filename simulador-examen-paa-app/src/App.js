@@ -1,9 +1,23 @@
 import NavigationBar from "./components/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles.css";
 
 function App() {
-  return <NavigationBar />;
+  return (
+    <Router>
+      <NavigationBar />
+      <Routes>
+        <Route path="/login" element={""} />
+        <Route path="/registro" element={""} />
+        <Route path="/ranking" element={""} />
+        <Route path="/carreras" element={""} />
+        <Route path="/PAA" element={""} />
+        <Route path="/PAM" element={""} />
+        <Route path="/PCCNS" element={""} />
+        <Route path="/informacion" element={""} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

@@ -28,6 +28,9 @@ function NavigationBar() {
             <Nav.Link eventKey={2} href="/login">
               Iniciar Sesión
             </Nav.Link>
+            <Nav.Link eventKey={2} href="/registro">
+              Registrarse
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
