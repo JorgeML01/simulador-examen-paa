@@ -8,7 +8,7 @@ function NavigationBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">Simulador PAA</Navbar.Brand>
+        <Navbar.Brand href="/">Simulador Admisiones UNAH</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
