@@ -7,6 +7,11 @@ const UserRouter = require("./src/routes/users.route");
 
 require("dotenv").config();
 
+// Haz un get de prueba para ver si funciona.
+app.get("/", (req, res) => {
+  res.send("Hello world");
+});
+
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 app.use(cors());
