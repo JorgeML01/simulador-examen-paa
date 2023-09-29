@@ -2,3 +2,7 @@
 from = "/*"
 to = "/index.html"
 status = 200
+
+[build]
+  base = "simulador-examen-paa-app"
+  publish = "build"  # Asumiendo que tu directorio de construcción es "build"
