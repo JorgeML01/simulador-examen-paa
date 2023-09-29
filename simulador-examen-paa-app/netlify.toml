@@ -3,8 +3,14 @@ from = "/*"
 to = "/index.html"
 status = 200
 
+[[redirects]]
+  from = "/search"
+  to = "https://ill-red-giraffe-tux.cyclic.cloud/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
 [build]
   base = "simulador-examen-paa-app"
   publish = "build"  # Asumiendo que tu directorio de construcción es "build"
 
-/api/*  https://ill-red-giraffe-tux.cyclic.cloud/:splat  200
