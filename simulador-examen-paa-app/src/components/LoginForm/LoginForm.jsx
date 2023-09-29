@@ -125,14 +125,14 @@ function LoginForm() {
                   Forgot password?
                 </a>
               </p>
-              <div>
-                <input
-                  type="submit"
-                  value="Iniciar Sesión"
-                  onClick={handleSubmit}
-                  className="button-login"
-                />
-              </div>
+              <button
+                type="button"
+                className="btn btn-primary btn-block"
+                onClick={handleSubmit}
+              >
+                Iniciar Sesión
+              </button>
+
               <div className="d-flex flex-row mt-3 mb-5">
                 <MDBBtn
                   tag="a"
