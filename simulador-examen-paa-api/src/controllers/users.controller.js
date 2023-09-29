@@ -2,6 +2,8 @@ const { registerUser, getCredentials } = require("../services/users.service");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 
+// TODO: Poner los HTTP codes desde el archivo utils si no me equivoco.
+
 async function register(req, res) {
   try {
     const { email, password } = req.body;
@@ -31,4 +33,48 @@ async function register(req, res) {
   }
 }
 
-module.exports = { register };
+// TODO: Falta hacer todas las validaciones para que no truene el programa.
+async function login(req, res) {
+  const { email, password } = req.body;
+
+  try {
+    //! Ver por qué aquí sí puede ser const.
+    const errorMessages = [];
+    // TODO: Hacer las validaciones para corres y contraseñas correctas.
+    if (errorMessages.length) {
+      res.status(400).send({ error: errorMessages });
+    } else {
+      const [credentials] = await getCredentials(email);
+
+      const encryptedPassword = crypto
+        .pbkdf2Sync(password, credentials.salt, 30000, 64, "sha256")
+        .toString("base64");
+
+      if (credentials.password === encryptedPassword) {
+        const accessToken = jwt.sign(
+          {
+            email,
+            id: credentials.id,
+          },
+          process.env.ACCESS_TOKEN_SECRET,
+          { expiresIn: "1d" }
+        );
+
+        const refreshToken = jwt.sign(
+          { email, id: credentials.id },
+          process.env.ACCESS_TOKEN_SECRET,
+          { expiresIn: "1m" }
+        );
+
+        res.send({ sucess: true, data: { accessToken, refreshToken } });
+      } else {
+        res.status(401).send({ error: "Invalid credentials" });
+      }
+    }
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500).send("Internal server error");
+  }
+}
+
+module.exports = { register, login };

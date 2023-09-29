@@ -47,10 +47,9 @@ function LoginForm() {
                   Forgot password?
                 </a>
               </p>
-              <MDBBtn outline className="mx-2 px-5" color="white" size="lg">
-                Login
-              </MDBBtn>
-
+              <div className="button-container">
+                <input type="submit" value="Login" />
+              </div>
               <div className="d-flex flex-row mt-3 mb-5">
                 <MDBBtn
                   tag="a"
