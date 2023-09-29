@@ -50,7 +50,7 @@ body {
   white-space: nowrap;
   vertical-align: middle;
   touch-action: manipulation;
-  cursor: pointer;
+  cursor: pointer !important;
   background-image: none;
   border: 1px solid rgba(0, 0, 0, 0);
   padding: 9px 18px;
