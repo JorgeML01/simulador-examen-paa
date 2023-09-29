@@ -102,9 +102,7 @@ function LoginForm() {
                 id="formControlLg"
                 type="email"
                 size="lg"
-                //! Agregado.
                 name="email"
-                // value={email}
                 onChange={handleChangeEmail}
                 requiere
               />
@@ -116,9 +114,7 @@ function LoginForm() {
                 id="formControlLg"
                 type="password"
                 size="lg"
-                //! Agregado.
                 name="password"
-                // value={password}
                 onChange={handleChangePassword}
                 requiere
               />
@@ -154,7 +150,6 @@ function LoginForm() {
                 >
                   <MDBIcon fab icon="twitter" size="lg" />
                 </MDBBtn>
-
                 <MDBBtn
                   tag="a"
                   color="none"
