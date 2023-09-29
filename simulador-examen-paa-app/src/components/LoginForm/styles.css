@@ -17,11 +17,15 @@ body {
   );
 }
 
-/* Add a hover to button-container and a predefined color. */
-.button-container:hover {
-  background-color: #6a11cb;
+/* Style the button-container */
+.button-login {
+  background-color: #0066ff;
+  cursor: pointer !important;
+  transition: background-color 0.3s; /* Add a smooth transition */
+  color: white;
 }
-.button-container {
-  background-color: #6a11cb;
-  cursor: pointer;
+
+/* Change the background color on hover */
+.button-login:hover {
+  background-color: #0f0759; /* Change to your desired hover color */
 }
