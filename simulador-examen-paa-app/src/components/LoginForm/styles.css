@@ -16,3 +16,11 @@ body {
     rgba(37, 117, 252, 1)
   );
 }
+
+/* Add a hover to button-container and a predefined color. */
+.button-container:hover {
+  background-color: #6a11cb;
+}
+.button-container {
+  background-color: #6a11cb;
+}
