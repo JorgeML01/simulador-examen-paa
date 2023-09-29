@@ -48,7 +48,7 @@ function LoginForm() {
                 </a>
               </p>
               <div className="button-container">
-                <input type="submit" value="Login" />
+                <input type="submit" value="Iniciar Sesión" />
               </div>
               <div className="d-flex flex-row mt-3 mb-5">
                 <MDBBtn
