@@ -23,4 +23,5 @@ body {
 }
 .button-container {
   background-color: #6a11cb;
+  cursor: pointer;
 }
