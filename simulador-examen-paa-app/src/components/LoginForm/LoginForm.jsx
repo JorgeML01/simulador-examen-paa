@@ -130,8 +130,20 @@ function LoginForm() {
                   type="submit"
                   value="Iniciar Sesión"
                   onClick={handleSubmit}
+                  style={{
+                    padding: "10px 20px", // Adjust padding for touch targets
+                    fontSize: "16px", // Adjust font size for readability
+                    cursor: "pointer", // Change cursor to indicate interactivity
+                    border: "none", // Remove border for a cleaner look
+                    borderRadius: "5px", // Add some border radius for rounded corners
+                    backgroundColor: "#007bff", // Change background color
+                    color: "white", // Change text color
+                    boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.2)", // Add a subtle shadow
+                    transition: "background-color 0.3s", // Add a smooth transition
+                  }}
                 />
               </div>
+
               <div className="d-flex flex-row mt-3 mb-5">
                 <MDBBtn
                   tag="a"
