@@ -17,12 +17,12 @@ import {
 function LoginForm() {
   const navigate = useNavigate();
   const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  //! const [isSubmitted, setIsSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLoginSuccess = () => {
-    setIsSubmitted(true);
+    //! setIsSubmitted(true);
     navigate("/");
     window.location.reload();
   };
