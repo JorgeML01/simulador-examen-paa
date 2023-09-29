@@ -1,4 +1,8 @@
 import "./styles.css";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import {
   MDBBtn,
   MDBContainer,
@@ -11,6 +15,73 @@ import {
 } from "mdb-react-ui-kit";
 
 function LoginForm() {
+  const navigate = useNavigate();
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLoginSuccess = () => {
+    setIsSubmitted(true);
+    navigate("/");
+    window.location.reload();
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "https://ill-red-giraffe-tux.cyclic.cloud/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      // TODO: Pasarlo a las cookies en vez del localStorage.
+      localStorage.setItem("accessToken", response.data.data.accessToken);
+      localStorage.setItem("refreshToken", response.data.data.refreshToken);
+
+      handleLoginSuccess();
+    } catch (error) {
+      // Login error
+      if (error.response) {
+        if (error.response.status === 400) {
+          setErrorMessages({
+            field: "credentials",
+            message: "Invalid email or password.",
+          });
+        } else {
+          setErrorMessages({
+            field: "server",
+            message: error.response.data.message,
+          });
+        }
+      } else if (error.request) {
+        console.error("No se recibió respuesta del servidor...");
+      } else {
+        console.error("Error al hacer la solicitud:", error.message);
+      }
+    }
+  };
+
+  const renderErrorMessage = (field) => {
+    if (errorMessages.field == field) {
+      return <div className="error">{errorMessages.message}</div>;
+    } else {
+      return null;
+    }
+  };
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleChangePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
   return (
     <MDBContainer fluid>
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
@@ -24,7 +95,6 @@ function LoginForm() {
               <p className="text-white-50 mb-5">
                 Please enter your login and password!
               </p>
-
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
@@ -32,7 +102,13 @@ function LoginForm() {
                 id="formControlLg"
                 type="email"
                 size="lg"
+                //! Agregado.
+                name="email"
+                // value={email}
+                onChange={handleChangeEmail}
+                requiere
               />
+              {renderErrorMessage("email")}
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
@@ -40,15 +116,25 @@ function LoginForm() {
                 id="formControlLg"
                 type="password"
                 size="lg"
+                //! Agregado.
+                name="password"
+                // value={password}
+                onChange={handleChangePassword}
+                requiere
               />
-
+              {renderErrorMessage("password")}
+              {renderErrorMessage("credentials")}
               <p className="small mb-3 pb-lg-2">
                 <a class="text-white-50" href="#!">
                   Forgot password?
                 </a>
               </p>
               <div className="button-container">
-                <input type="submit" value="Iniciar Sesión" />
+                <input
+                  type="submit"
+                  value="Iniciar Sesión"
+                  onClick={handleSubmit}
+                />
               </div>
               <div className="d-flex flex-row mt-3 mb-5">
                 <MDBBtn
@@ -78,7 +164,6 @@ function LoginForm() {
                   <MDBIcon fab icon="google" size="lg" />
                 </MDBBtn>
               </div>
-
               <div>
                 <p className="mb-0">
                   Don't have an account?{" "}
