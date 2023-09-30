@@ -56,7 +56,7 @@ function LoginForm() {
       } else if (error.request) {
         console.error("No se recibió respuesta del servidor...");
         setErrorMessages({
-          field: "server",
+          field: "credentials",
           message: "Invalid email or password.",
         });
       } else {
