@@ -4,17 +4,25 @@ const HTTPCodes = require("../utils/HTTPCodes");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 
+/**
+ * Registers a new user with the given email and password.
+ * @async
+ * @function register
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Promise<void>} - A Promise that resolves when the user is registered.
+ */
 async function register(req, res) {
   try {
     const { email, password } = req.body;
-    const error = [];
+    const errorMessages = [];
 
     // Verifies if the email and password are valid.
-    if (!isEmail(email)) error.push("Invalid email");
-    if (!isPassword(password)) error.push("Invalid password.");
+    if (!isEmail(email)) errorMessages.push("Invalid email");
+    if (!isPassword(password)) errorMessages.push("Invalid password.");
 
-    if (error.length) {
-      res.status(400).send("Aquí va el mensaje de error.");
+    if (errorMessages.length) {
+      res.status(HTTPCodes.BAD_REQUEST).send({ error: errorMessages });
     } else {
       const salt = crypto.randomBytes(128).toString("base64");
       const encryptedPassword = crypto
@@ -37,6 +45,16 @@ async function register(req, res) {
   }
 }
 
+/**
+ * Authenticates a user with the provided email and password.
+ * @async
+ * @function login
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @param {string} req.body.email - The user's email.
+ * @param {string} req.body.password - The user's password.
+ * @returns {Object} The response object with a success flag and access and refresh tokens if authentication is successful, or an error message if authentication fails.
+ */
 async function login(req, res) {
   const { email, password } = req.body;
 
