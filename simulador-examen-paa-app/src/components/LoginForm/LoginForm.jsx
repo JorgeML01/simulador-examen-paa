@@ -28,7 +28,7 @@ function LoginForm() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     try {
       const response = await axios.post(
@@ -82,18 +82,38 @@ function LoginForm() {
     setPassword(event.target.value);
   };
 
+  //! Testing.
   const handleMouseDown = (event) => {
-    // Prevent the default behavior, such as submitting a form
-    event.preventDefault();
-
-    // Your custom logic to handle the mouse down event
-    // For example, you can add code to show a message or perform an action
-    console.log("Button pressed!");
-
-    // You can also call your existing handleSubmit function if needed
-    handleSubmit(event);
+    if (isTouchEvent(event)) {
+      // Handle touch event
+      console.log("Touch event detected");
+      handleSubmit(); // Llama a handleSubmit en eventos táctiles
+    } else {
+      // Handle mouse event
+      console.log("Mouse event detected");
+      // Puedes llamar a handleSubmit aquí si lo deseas en eventos de mouse
+    }
   };
 
+  const handleTouchStart = () => {
+    // Handle touch event
+    console.log("Touch event detected");
+    handleSubmit(); // Llama a handleSubmit en eventos táctiles
+  };
+
+  const handleMouseClick = () => {
+    // Handle mouse event
+    console.log("Mouse event detected");
+    // Puedes llamar a handleSubmit aquí si lo deseas en eventos de clic de ratón
+    handleSubmit(); // Llama a handleSubmit en eventos táctiles
+  };
+
+  const isTouchEvent = (event) => {
+    return (
+      event.nativeEvent instanceof PointerEvent &&
+      event.nativeEvent.pointerType === "touch"
+    );
+  };
   return (
     <MDBContainer fluid>
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
@@ -133,7 +153,7 @@ function LoginForm() {
               {renderErrorMessage("password")}
               {renderErrorMessage("credentials")}
               <p className="small mb-3 pb-lg-2">
-                <a class="text-white-50" href="#!">
+                <a className="text-white-50" href="#!">
                   Forgot password?
                 </a>
               </p>
@@ -141,9 +161,8 @@ function LoginForm() {
                 type="button"
                 className="btn btn-primary btn-block"
                 onMouseDown={handleMouseDown}
-                onTouchStart={handleMouseDown}
-                onClick={handleMouseDown}
-                onClickEnter={handleMouseDown}
+                onTouchStart={handleTouchStart}
+                onClick={handleMouseClick}
               >
                 Iniciar Sesión
               </button>
@@ -178,7 +197,7 @@ function LoginForm() {
               <div>
                 <p className="mb-0">
                   Don't have an account?{" "}
-                  <a href="#!" class="text-white-50 fw-bold">
+                  <a href="#!" className="text-white-50 fw-bold">
                     Sign Up
                   </a>
                 </p>
