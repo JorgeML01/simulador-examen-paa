@@ -65,7 +65,7 @@ async function login(req, res) {
     else if (!isPassword(password)) errorMessages.push("Invalid password.");
 
     if (errorMessages.length) {
-      res.status(400).send({ error: errorMessages });
+      res.status(HTPP.BAD_REQUEST).send({ error: errorMessages });
     } else {
       const [credentials] = await getCredentials(email);
 
