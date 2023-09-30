@@ -28,7 +28,7 @@ function LoginForm() {
   };
 
   const handleSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
 
     try {
       const response = await axios.post(
@@ -82,38 +82,6 @@ function LoginForm() {
     setPassword(event.target.value);
   };
 
-  //! Testing.
-  const handleMouseDown = (event) => {
-    if (isTouchEvent(event)) {
-      // Handle touch event
-      console.log("Touch event detected");
-      handleSubmit(); // Llama a handleSubmit en eventos táctiles
-    } else {
-      // Handle mouse event
-      console.log("Mouse event detected");
-      // Puedes llamar a handleSubmit aquí si lo deseas en eventos de mouse
-    }
-  };
-
-  const handleTouchStart = () => {
-    // Handle touch event
-    console.log("Touch event detected");
-    handleSubmit(); // Llama a handleSubmit en eventos táctiles
-  };
-
-  const handleMouseClick = () => {
-    // Handle mouse event
-    console.log("Mouse event detected");
-    // Puedes llamar a handleSubmit aquí si lo deseas en eventos de clic de ratón
-    handleSubmit(); // Llama a handleSubmit en eventos táctiles
-  };
-
-  const isTouchEvent = (event) => {
-    return (
-      event.nativeEvent instanceof PointerEvent &&
-      event.nativeEvent.pointerType === "touch"
-    );
-  };
   return (
     <MDBContainer fluid>
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
@@ -153,16 +121,14 @@ function LoginForm() {
               {renderErrorMessage("password")}
               {renderErrorMessage("credentials")}
               <p className="small mb-3 pb-lg-2">
-                <a className="text-white-50" href="#!">
+                <a class="text-white-50" href="#!">
                   Forgot password?
                 </a>
               </p>
               <button
                 type="button"
                 className="btn btn-primary btn-block"
-                onMouseDown={handleMouseDown}
-                onTouchStart={handleTouchStart}
-                onClick={handleMouseClick}
+                onClick={handleSubmit}
               >
                 Iniciar Sesión
               </button>
@@ -197,7 +163,7 @@ function LoginForm() {
               <div>
                 <p className="mb-0">
                   Don't have an account?{" "}
-                  <a href="#!" className="text-white-50 fw-bold">
+                  <a href="#!" class="text-white-50 fw-bold">
                     Sign Up
                   </a>
                 </p>
