@@ -73,6 +73,8 @@ async function login(req, res) {
         );
 
         res.send({ sucess: true, data: { accessToken, refreshToken } });
+      } else if (credentials.password.length) {
+        res.status(HTTPCodes.UNAUTHORIZED).send({ message: "Wrong password" });
       } else {
         res
           .status(HTTPCodes.UNAUTHORIZED)
