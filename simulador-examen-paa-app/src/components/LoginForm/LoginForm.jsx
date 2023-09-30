@@ -47,23 +47,18 @@ function LoginForm() {
     } catch (error) {
       // Login error
       if (error.response) {
-        if (
-          error.response.status === 400 ||
-          error.response.status === 401 ||
-          error.response.status === 500
-        ) {
+        if (error.response.status === 400 || error.response.status === 401) {
           setErrorMessages({
             field: "credentials",
             message: "Invalid email or password.",
           });
-        } else {
-          setErrorMessages({
-            field: "server",
-            message: "Server error!!",
-          });
         }
       } else if (error.request) {
         console.error("No se recibió respuesta del servidor...");
+        setErrorMessages({
+          field: "server",
+          message: "Invalid email or password.",
+        });
       } else {
         console.error("Error al hacer la solicitud:", error.message);
       }
