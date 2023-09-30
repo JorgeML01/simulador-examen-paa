@@ -3,13 +3,26 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBInput,
+  MDBIcon,
+} from "mdb-react-ui-kit";
+
 function LoginForm() {
   const navigate = useNavigate();
   const [errorMessages, setErrorMessages] = useState({});
+  //! const [isSubmitted, setIsSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLoginSuccess = () => {
+    //! setIsSubmitted(true);
     navigate("/");
     window.location.reload();
   };
@@ -26,12 +39,30 @@ function LoginForm() {
         }
       );
 
+      // TODO: Pasarlo a las cookies en vez del localStorage.
       localStorage.setItem("accessToken", response.data.data.accessToken);
       localStorage.setItem("refreshToken", response.data.data.refreshToken);
 
       handleLoginSuccess();
     } catch (error) {
-      // Handle login errors
+      // Login error
+      if (error.response) {
+        if (error.response.status === 400) {
+          setErrorMessages({
+            field: "credentials",
+            message: "Invalid email or password.",
+          });
+        } else {
+          setErrorMessages({
+            field: "server",
+            message: error.response.data.message,
+          });
+        }
+      } else if (error.request) {
+        console.error("No se recibió respuesta del servidor...");
+      } else {
+        console.error("Error al hacer la solicitud:", error.message);
+      }
     }
   };
 
@@ -52,37 +83,96 @@ function LoginForm() {
   };
 
   return (
-    <div className="login-form-container">
-      <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-      <p className="text-white-50 mb-5">
-        Please enter your login and password!
-      </p>
-      <form onSubmit={handleSubmit}>
-        <input
-          className="form-control mb-4"
-          placeholder="Email address"
-          type="email"
-          name="email"
-          onChange={handleChangeEmail}
-          required
-        />
-        {renderErrorMessage("email")}
-        <input
-          className="form-control mb-4"
-          placeholder="Password"
-          type="password"
-          name="password"
-          onChange={handleChangePassword}
-          required
-        />
-        {renderErrorMessage("password")}
-        {renderErrorMessage("credentials")}
-        <button type="submit" className="btn btn-primary btn-block">
-          Iniciar Sesión
-        </button>
-      </form>
-      {/* Other UI elements */}
-    </div>
+    <MDBContainer fluid>
+      <MDBRow className="d-flex justify-content-center align-items-center h-100">
+        <MDBCol col="12">
+          <MDBCard
+            className="bg-dark text-white my-5 mx-auto"
+            style={{ borderRadius: "1rem", maxWidth: "400px" }}
+          >
+            <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
+              <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
+              <p className="text-white-50 mb-5">
+                Please enter your login and password!
+              </p>
+              <MDBInput
+                wrapperClass="mb-4 mx-5 w-100"
+                labelClass="text-white"
+                label="Email address"
+                id="formControlLg"
+                type="email"
+                size="lg"
+                name="email"
+                onChange={handleChangeEmail}
+                requiere
+              />
+              {renderErrorMessage("email")}
+              <MDBInput
+                wrapperClass="mb-4 mx-5 w-100"
+                labelClass="text-white"
+                label="Password"
+                id="formControlLg"
+                type="password"
+                size="lg"
+                name="password"
+                onChange={handleChangePassword}
+                requiere
+              />
+              {renderErrorMessage("password")}
+              {renderErrorMessage("credentials")}
+              <p className="small mb-3 pb-lg-2">
+                <a class="text-white-50" href="#!">
+                  Forgot password?
+                </a>
+              </p>
+              <button
+                type="button"
+                className="btn btn-primary btn-block"
+                onMouseDown={handleMouseDown}
+              >
+                Iniciar Sesión
+              </button>
+
+              <div className="d-flex flex-row mt-3 mb-5">
+                <MDBBtn
+                  tag="a"
+                  color="none"
+                  className="m-3"
+                  style={{ color: "white" }}
+                >
+                  <MDBIcon fab icon="facebook-f" size="lg" />
+                </MDBBtn>
+
+                <MDBBtn
+                  tag="a"
+                  color="none"
+                  className="m-3"
+                  style={{ color: "white" }}
+                >
+                  <MDBIcon fab icon="twitter" size="lg" />
+                </MDBBtn>
+                <MDBBtn
+                  tag="a"
+                  color="none"
+                  className="m-3"
+                  style={{ color: "white" }}
+                >
+                  <MDBIcon fab icon="google" size="lg" />
+                </MDBBtn>
+              </div>
+              <div>
+                <p className="mb-0">
+                  Don't have an account?{" "}
+                  <a href="#!" class="text-white-50 fw-bold">
+                    Sign Up
+                  </a>
+                </p>
+              </div>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
   );
 }
 
