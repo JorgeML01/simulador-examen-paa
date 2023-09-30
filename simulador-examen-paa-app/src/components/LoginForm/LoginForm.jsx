@@ -18,12 +18,10 @@ import {
 function LoginForm() {
   const navigate = useNavigate();
   const [errorMessages, setErrorMessages] = useState({});
-  //! const [isSubmitted, setIsSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLoginSuccess = () => {
-    //! setIsSubmitted(true);
     navigate("/");
     window.location.reload();
   };
@@ -57,7 +55,7 @@ function LoginForm() {
         console.error("No se recibió respuesta del servidor...");
         setErrorMessages({
           field: "credentials",
-          message: "Invalid email or password.",
+          message: "Wrong password!",
         });
       } else {
         console.error("Error al hacer la solicitud:", error.message);
