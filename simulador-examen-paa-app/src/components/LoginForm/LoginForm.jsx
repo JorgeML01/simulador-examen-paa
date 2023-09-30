@@ -141,6 +141,9 @@ function LoginForm() {
                 type="button"
                 className="btn btn-primary btn-block"
                 onMouseDown={handleMouseDown}
+                onTouchStart={handleMouseDown}
+                onClick={handleMouseDown}
+                onClickEnter={handleMouseDown}
               >
                 Iniciar Sesión
               </button>
