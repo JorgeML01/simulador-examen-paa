@@ -15,7 +15,7 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 
-function LoginForm() {
+function RegisterForm() {
   const navigate = useNavigate();
   const [errorMessages, setErrorMessages] = useState({});
   const [email, setEmail] = useState("");
@@ -88,10 +88,8 @@ function LoginForm() {
             style={{ borderRadius: "1rem", maxWidth: "400px" }}
           >
             <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
-              <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-              <p className="text-white-50 mb-5">
-                Please enter your email and password!
-              </p>
+              <h2 className="fw-bold mb-2 text-uppercase">SIGN UP</h2>
+              <p className="text-white-50 mb-5">Please fill out the form!</p>
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
@@ -173,4 +171,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

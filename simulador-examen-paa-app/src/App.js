@@ -1,6 +1,7 @@
 import NavigationBar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import "./styles.css";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/registro" element={""} />
+        <Route path="/registro" element={<Register />} />
         <Route path="/ranking" element={""} />
         <Route path="/carreras" element={""} />
         <Route path="/PAA" element={""} />
