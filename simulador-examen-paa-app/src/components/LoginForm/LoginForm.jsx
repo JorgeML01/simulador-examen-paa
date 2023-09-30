@@ -128,7 +128,7 @@ function LoginForm() {
               <button
                 type="button"
                 className="btn btn-primary btn-block"
-                onClick={handleSubmit}
+                onPointerEnter={handleSubmit}
               >
                 Iniciar Sesión
               </button>
