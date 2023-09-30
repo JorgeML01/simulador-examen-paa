@@ -39,6 +39,7 @@ function RegisterForm() {
         }
       );
 
+      console.log(response.data);
       handleSignUpSuccess();
     } catch (error) {
       if (error.response) {
