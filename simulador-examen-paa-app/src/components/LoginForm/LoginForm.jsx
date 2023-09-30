@@ -59,7 +59,7 @@ function LoginForm() {
         } else {
           setErrorMessages({
             field: "server",
-            message: error.response.data.message,
+            message: "Server error!!",
           });
         }
       } else if (error.request) {

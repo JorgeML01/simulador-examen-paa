@@ -42,7 +42,6 @@ async function login(req, res) {
   try {
     //! Ver por qué aquí sí puede ser const.
     const errorMessages = [];
-    // TODO: Hacer las validaciones para corres y contraseñas correctas.
 
     if (!isEmail(email)) errorMessages.push("Invalid email");
     else if (!isPassword(password)) errorMessages.push("Invalid password.");
@@ -73,8 +72,6 @@ async function login(req, res) {
         );
 
         res.send({ sucess: true, data: { accessToken, refreshToken } });
-      } else if (credentials.password.length) {
-        res.status(HTTPCodes.UNAUTHORIZED).send({ message: "Wrong password" });
       } else {
         res
           .status(HTTPCodes.UNAUTHORIZED)
