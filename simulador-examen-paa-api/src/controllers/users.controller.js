@@ -1,4 +1,6 @@
 const { registerUser, getCredentials } = require("../services/users.service");
+const { isEmail, isPassword } = require("../utils/validator");
+const HTTPCodes = require("../utils/HTTPCodes");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 
@@ -41,6 +43,10 @@ async function login(req, res) {
     //! Ver por qué aquí sí puede ser const.
     const errorMessages = [];
     // TODO: Hacer las validaciones para corres y contraseñas correctas.
+
+    if (!isEmail(email)) errorMessages.push("Invalid email");
+    else if (!isPassword(password)) errorMessages.push("Invalid password.");
+
     if (errorMessages.length) {
       res.status(400).send({ error: errorMessages });
     } else {
@@ -68,12 +74,15 @@ async function login(req, res) {
 
         res.send({ sucess: true, data: { accessToken, refreshToken } });
       } else {
-        res.status(401).send({ error: "Invalid credentials" });
+        res
+          .status(HTTPCodes.UNAUTHORIZED)
+          .send({ message: "Invalid credentials" });
       }
     }
   } catch (error) {
-    console.log(error);
-    res.sendStatus(500).send("Internal server error");
+    res
+      .status(HTTPCodes.INTERNAL_SERVER_ERROR)
+      .send({ message: "Try again later" });
   }
 }
 

@@ -40,9 +40,6 @@ function LoginForm() {
         }
       );
 
-      // TODO: Pasarlo a las cookies en vez del localStorage.
-      //localStorage.setItem("accessToken", response.data.data.accessToken);
-      //localStorage.setItem("refreshToken", response.data.data.refreshToken);
       Cookies.set("accessToken", response.data.data.accessToken);
       Cookies.set("refreshToken", response.data.data.refreshToken);
 
