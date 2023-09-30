@@ -82,6 +82,18 @@ function LoginForm() {
     setPassword(event.target.value);
   };
 
+  const handleMouseDown = (event) => {
+    // Prevent the default behavior, such as submitting a form
+    event.preventDefault();
+
+    // Your custom logic to handle the mouse down event
+    // For example, you can add code to show a message or perform an action
+    console.log("Button pressed!");
+
+    // You can also call your existing handleSubmit function if needed
+    handleSubmit(event);
+  };
+
   return (
     <MDBContainer fluid>
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
