@@ -127,7 +127,7 @@ function LoginForm() {
                 className="btn btn-primary btn-block"
                 onClick={handleSubmit}
               >
-                Iniciar Sesión
+                Log In
               </button>
 
               <div className="d-flex flex-row mt-3 mb-5">
@@ -160,7 +160,7 @@ function LoginForm() {
               <div>
                 <p className="mb-0">
                   Don't have an account?{" "}
-                  <a href="#!" class="text-white-50 fw-bold">
+                  <a href="/registro" class="text-white-50 fw-bold">
                     Sign Up
                   </a>
                 </p>

@@ -2,7 +2,6 @@ import "./styles.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Cookies from "js-cookie";
 
 import {
   MDBBtn,
@@ -20,9 +19,10 @@ function RegisterForm() {
   const [errorMessages, setErrorMessages] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
-  const handleLoginSuccess = () => {
-    navigate("/");
+  const handleSignUpSuccess = () => {
+    navigate("/login");
     window.location.reload();
   };
 
@@ -31,19 +31,16 @@ function RegisterForm() {
 
     try {
       const response = await axios.post(
-        "https://ill-red-giraffe-tux.cyclic.cloud/login",
+        "https://ill-red-giraffe-tux.cyclic.cloud/register",
         {
           email,
           password,
+          name,
         }
       );
 
-      Cookies.set("accessToken", response.data.data.accessToken);
-      Cookies.set("refreshToken", response.data.data.refreshToken);
-
-      handleLoginSuccess();
+      handleSignUpSuccess();
     } catch (error) {
-      // Login error
       if (error.response) {
         if (error.response.status === 400 || error.response.status === 401) {
           setErrorMessages({
@@ -79,6 +76,10 @@ function RegisterForm() {
     setPassword(event.target.value);
   };
 
+  const handleChangeName = (event) => {
+    setName(event.target.value);
+  };
+
   return (
     <MDBContainer fluid>
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
@@ -90,6 +91,17 @@ function RegisterForm() {
             <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
               <h2 className="fw-bold mb-2 text-uppercase">SIGN UP</h2>
               <p className="text-white-50 mb-5">Please fill out the form!</p>
+              <MDBInput
+                wrapperClass="mb-4 mx-5 w-100"
+                labelClass="text-white"
+                label="Complete name"
+                id="formControlLg"
+                type="name"
+                size="lg"
+                name="name"
+                onChange={handleChangeName}
+                requiere
+              />
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
@@ -115,17 +127,13 @@ function RegisterForm() {
               />
               {renderErrorMessage("password")}
               {renderErrorMessage("credentials")}
-              <p className="small mb-3 pb-lg-2">
-                <a class="text-white-50" href="#!">
-                  Forgot password?
-                </a>
-              </p>
+
               <button
                 type="button"
                 className="btn btn-primary btn-block"
                 onClick={handleSubmit}
               >
-                Iniciar Sesión
+                Create account
               </button>
 
               <div className="d-flex flex-row mt-3 mb-5">
@@ -157,9 +165,9 @@ function RegisterForm() {
               </div>
               <div>
                 <p className="mb-0">
-                  Don't have an account?{" "}
-                  <a href="#!" class="text-white-50 fw-bold">
-                    Sign Up
+                  Do you have an account?{" "}
+                  <a href="/login" class="text-white-50 fw-bold">
+                    Log In
                   </a>
                 </p>
               </div>
