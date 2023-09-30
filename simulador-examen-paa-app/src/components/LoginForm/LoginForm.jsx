@@ -47,7 +47,11 @@ function LoginForm() {
     } catch (error) {
       // Login error
       if (error.response) {
-        if (error.response.status === 400 || error.response.status === 401) {
+        if (
+          error.response.status === 400 ||
+          error.response.status === 401 ||
+          error.response.status === 500
+        ) {
           setErrorMessages({
             field: "credentials",
             message: "Invalid email or password.",
