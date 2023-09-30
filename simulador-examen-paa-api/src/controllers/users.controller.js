@@ -4,16 +4,16 @@ const HTTPCodes = require("../utils/HTTPCodes");
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 
-// TODO: Poner los HTTP codes desde el archivo utils si no me equivoco.
-
 async function register(req, res) {
   try {
     const { email, password } = req.body;
     const error = [];
 
-    // TODO: Verificación de si es una contraseña o email correcto.
+    // Verifies if the email and password are valid.
+    if (!isEmail(email)) error.push("Invalid email");
+    if (!isPassword(password)) error.push("Invalid password.");
+
     if (error.length) {
-      //! En caso de que haya un error en el formato de contraseña o correo.
       res.status(400).send("Aquí va el mensaje de error.");
     } else {
       const salt = crypto.randomBytes(128).toString("base64");
@@ -30,17 +30,17 @@ async function register(req, res) {
       res.send({ sucess: true, newUser });
     }
   } catch (error) {
-    console.log(error);
-    res.sendStatus(500).send("Internal server error");
+    console.log("User already exists.");
+    res
+      .status(HTTPCodes.INTERNAL_SERVER_ERROR)
+      .send({ error: "Internal server error" });
   }
 }
 
-// TODO: Falta hacer todas las validaciones para que no truene el programa.
 async function login(req, res) {
   const { email, password } = req.body;
 
   try {
-    //! Ver por qué aquí sí puede ser const.
     const errorMessages = [];
 
     if (!isEmail(email)) errorMessages.push("Invalid email");

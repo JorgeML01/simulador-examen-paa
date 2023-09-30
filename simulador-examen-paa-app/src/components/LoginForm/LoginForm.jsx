@@ -55,7 +55,7 @@ function LoginForm() {
         console.error("No se recibió respuesta del servidor...");
         setErrorMessages({
           field: "credentials",
-          message: "Wrong password!",
+          message: "Invalid email or password.",
         });
       } else {
         console.error("Error al hacer la solicitud:", error.message);
