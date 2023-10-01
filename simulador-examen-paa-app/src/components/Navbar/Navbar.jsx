@@ -4,13 +4,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 
 function NavigationBar() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isCheckLoginStatusDone, setIsCheckLoginStatusDone] = useState(false);
 
   function checkLoginStatus() {
     const accessToken = Cookies.get("accessToken");
@@ -21,8 +20,6 @@ function NavigationBar() {
     } else {
       setIsLoggedIn(false);
     }
-
-    setIsCheckLoginStatusDone(true);
   }
 
   function handleLogout() {
@@ -32,9 +29,9 @@ function NavigationBar() {
     window.location.reload();
   }
 
-  if (!isCheckLoginStatusDone) {
+  useEffect(() => {
     checkLoginStatus();
-  }
+  }, []);
 
   return (
     <Navbar
