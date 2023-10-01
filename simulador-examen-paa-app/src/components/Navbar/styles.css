@@ -1,0 +1,21 @@
+.font-size-nav {
+  font-size: 15px;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.color-container-nav {
+  color: #ffffff;
+}
+
+.color-container-nav:hover {
+  color: #d3d3d3;
+}
+
+#collapsible-nav-dropdown {
+  color: #ffffff;
+}
+
+#collapsible-nav-dropdown:hover {
+  color: #d3d3d3;
+}
