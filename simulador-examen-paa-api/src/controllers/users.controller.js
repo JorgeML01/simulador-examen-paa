@@ -78,13 +78,14 @@ async function login(req, res) {
           {
             email,
             id: credentials.id,
+            name: credentials.name,
           },
           process.env.ACCESS_TOKEN_SECRET,
           { expiresIn: "1d" }
         );
 
         const refreshToken = jwt.sign(
-          { email, id: credentials.id },
+          { email, id: credentials.id, name: credentials.name },
           process.env.ACCESS_TOKEN_SECRET,
           { expiresIn: "1m" }
         );

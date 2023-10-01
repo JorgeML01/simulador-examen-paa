@@ -33,7 +33,7 @@ const registerUser = async (user) => {
 
 const getCredentials = async (email) => {
   let credentials = await knex
-    .select("password", "salt", "id")
+    .select("password", "salt", "id", "name")
     .from("users")
     .where("email", email);
   credentials = JSON.stringify(credentials);
