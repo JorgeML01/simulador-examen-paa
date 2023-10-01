@@ -17,6 +17,7 @@ function App() {
         <Route path="/PAM" element={""} />
         <Route path="/PCCNS" element={""} />
         <Route path="/informacion" element={""} />
+        <Route path="/Simuladores" element={""} />
       </Routes>
     </Router>
   );
