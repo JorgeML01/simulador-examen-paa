@@ -30,7 +30,7 @@ function LoginForm() {
     event.preventDefault();
 
     const headers = {
-      Authorization: `Bearer ${accessToken}`,
+      authorization: `Bearer ${accessToken}`,
     };
 
     try {
