@@ -29,18 +29,13 @@ function LoginForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const headers = {
-      authorization: "test",
-    };
-
     try {
       const response = await axios.post(
         "https://ill-red-giraffe-tux.cyclic.cloud/login",
         {
           email,
           password,
-        },
-        { headers }
+        }
       );
 
       Cookies.set("accessToken", response.data.data.accessToken);
