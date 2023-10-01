@@ -14,7 +14,7 @@ const jwt = require("jsonwebtoken");
  */
 async function register(req, res) {
   try {
-    const { email, password } = req.body;
+    const { email, password, name } = req.body;
     const errorMessages = [];
 
     // Verifies if the email and password are valid.

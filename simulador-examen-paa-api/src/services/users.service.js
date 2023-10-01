@@ -23,6 +23,7 @@ const registerUser = async (user) => {
       email: user.email,
       password: user.encryptedPassword,
       salt: user.salt,
+      name: user.name,
     });
   } catch (error) {
     console.log(error);
