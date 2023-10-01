@@ -160,7 +160,7 @@ function LoginForm() {
               <div>
                 <p className="mb-0">
                   Don't have an account?{" "}
-                  <a href="/registro" class="text-white-50 fw-bold">
+                  <a href="/login" class="text-white-50 fw-bold">
                     Sign Up
                   </a>
                 </p>
