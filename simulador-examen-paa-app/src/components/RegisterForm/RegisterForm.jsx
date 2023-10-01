@@ -96,35 +96,32 @@ function RegisterForm() {
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
                 label="Complete name"
-                id="formControlLg"
+                id="formControlLg1"
                 type="name"
                 size="lg"
                 name="name"
                 onChange={handleChangeName}
-                requiere
               />
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
                 label="Email address"
-                id="formControlLg"
+                id="formControlLg2"
                 type="email"
                 size="lg"
                 name="email"
                 onChange={handleChangeEmail}
-                requiere
               />
               {renderErrorMessage("email")}
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
                 label="Password"
-                id="formControlLg"
+                id="formControlLg3"
                 type="password"
                 size="lg"
                 name="password"
                 onChange={handleChangePassword}
-                requiere
               />
               {renderErrorMessage("password")}
               {renderErrorMessage("credentials")}
@@ -167,7 +164,7 @@ function RegisterForm() {
               <div>
                 <p className="mb-0">
                   Do you have an account?{" "}
-                  <a href="/login" class="text-white-50 fw-bold">
+                  <a href="/login" className="text-white-50 fw-bold">
                     Log In
                   </a>
                 </p>

@@ -96,29 +96,27 @@ function LoginForm() {
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
                 label="Email address"
-                id="formControlLg"
+                id="formControlLg1"
                 type="email"
                 size="lg"
                 name="email"
                 onChange={handleChangeEmail}
-                requiere
               />
               {renderErrorMessage("email")}
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
                 label="Password"
-                id="formControlLg"
+                id="formControlLg2"
                 type="password"
                 size="lg"
                 name="password"
                 onChange={handleChangePassword}
-                requiere
               />
               {renderErrorMessage("password")}
               {renderErrorMessage("credentials")}
               <p className="small mb-3 pb-lg-2">
-                <a class="text-white-50" href="#!">
+                <a className="text-white-50" href="#!">
                   Forgot password?
                 </a>
               </p>
@@ -160,7 +158,7 @@ function LoginForm() {
               <div>
                 <p className="mb-0">
                   Don't have an account?{" "}
-                  <a href="/login" class="text-white-50 fw-bold">
+                  <a href="/login" className="text-white-50 fw-bold">
                     Sign Up
                   </a>
                 </p>

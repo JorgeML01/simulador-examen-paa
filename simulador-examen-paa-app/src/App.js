@@ -9,6 +9,7 @@ function App() {
     <Router>
       <NavigationBar />
       <Routes>
+        <Route path="/" element={""} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Register />} />
         <Route path="/ranking" element={""} />
