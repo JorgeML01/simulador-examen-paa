@@ -4,14 +4,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import {
-  MDBBtn,
   MDBContainer,
   MDBRow,
   MDBCol,
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBIcon,
 } from "mdb-react-ui-kit";
 
 function RegisterForm() {

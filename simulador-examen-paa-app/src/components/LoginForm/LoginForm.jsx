@@ -5,14 +5,12 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 import {
-  MDBBtn,
   MDBContainer,
   MDBRow,
   MDBCol,
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBIcon,
 } from "mdb-react-ui-kit";
 
 function LoginForm() {
