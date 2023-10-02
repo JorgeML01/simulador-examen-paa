@@ -37,12 +37,10 @@ function NavigationBar() {
     <Navbar
       collapseOnSelect
       expand="lg"
-      className="bg-black bg-gradient font-size-nav"
+      className="bg-body-tertiary font-size-nav"
     >
       <Container>
-        <Navbar.Brand href="/" className="color-container-nav">
-          Simulador Admisiones UNAH
-        </Navbar.Brand>
+        <Navbar.Brand href="/">Simulador Admisiones UNAH</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

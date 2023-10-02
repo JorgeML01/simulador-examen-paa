@@ -88,14 +88,14 @@ function LoginForm() {
             style={{ borderRadius: "1rem", maxWidth: "400px" }}
           >
             <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
-              <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
+              <h2 className="fw-bold mb-2 text-uppercase">Inicio de Sesión</h2>
               <p className="text-white-50 mb-5">
-                Please enter your email and password!
+                ¡Ingresa tu correo y contraseña!
               </p>
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
-                label="Email address"
+                label="Dirección de correo"
                 id="formControlLg1"
                 type="email"
                 size="lg"
@@ -106,7 +106,7 @@ function LoginForm() {
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
-                label="Password"
+                label="Contraseña"
                 id="formControlLg2"
                 type="password"
                 size="lg"
@@ -117,49 +117,23 @@ function LoginForm() {
               {renderErrorMessage("credentials")}
               <p className="small mb-3 pb-lg-2">
                 <a className="text-white-50" href="#!">
-                  Forgot password?
+                  ¿Olvidaste la contraseña?
                 </a>
               </p>
               <button
                 type="button"
-                className="btn btn-primary btn-block"
+                className="btn btn-light"
                 onClick={handleSubmit}
               >
-                Log In
+                Ingresar
               </button>
-
-              <div className="d-flex flex-row mt-3 mb-5">
-                <MDBBtn
-                  tag="a"
-                  color="none"
-                  className="m-3"
-                  style={{ color: "white" }}
-                >
-                  <MDBIcon fab icon="facebook-f" size="lg" />
-                </MDBBtn>
-
-                <MDBBtn
-                  tag="a"
-                  color="none"
-                  className="m-3"
-                  style={{ color: "white" }}
-                >
-                  <MDBIcon fab icon="twitter" size="lg" />
-                </MDBBtn>
-                <MDBBtn
-                  tag="a"
-                  color="none"
-                  className="m-3"
-                  style={{ color: "white" }}
-                >
-                  <MDBIcon fab icon="google" size="lg" />
-                </MDBBtn>
-              </div>
+              {/*   */}
+              <div className="d-flex flex-row mt-3 mb-5"></div>
               <div>
                 <p className="mb-0">
-                  Don't have an account?{" "}
+                  ¿No tienes una cuenta?{" "}
                   <a href="/login" className="text-white-50 fw-bold">
-                    Sign Up
+                    Regístrate
                   </a>
                 </p>
               </div>

@@ -90,12 +90,14 @@ function RegisterForm() {
             style={{ borderRadius: "1rem", maxWidth: "400px" }}
           >
             <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
-              <h2 className="fw-bold mb-2 text-uppercase">SIGN UP</h2>
-              <p className="text-white-50 mb-5">Please fill out the form!</p>
+              <h2 className="fw-bold mb-2 text-uppercase">CREAR CUENTA</h2>
+              <p className="text-white-50 mb-5">
+                ¡Por favor llena el formulario!
+              </p>
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
-                label="Complete name"
+                label="Nombre completo"
                 id="formControlLg1"
                 type="name"
                 size="lg"
@@ -105,7 +107,7 @@ function RegisterForm() {
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
-                label="Email address"
+                label="Dirección de correo"
                 id="formControlLg2"
                 type="email"
                 size="lg"
@@ -116,7 +118,7 @@ function RegisterForm() {
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
-                label="Password"
+                label="Contraseña"
                 id="formControlLg3"
                 type="password"
                 size="lg"
@@ -128,44 +130,18 @@ function RegisterForm() {
 
               <button
                 type="button"
-                className="btn btn-primary btn-block"
+                className="btn btn-light"
                 onClick={handleSubmit}
               >
-                Create account
+                Crear cuenta
               </button>
 
-              <div className="d-flex flex-row mt-3 mb-5">
-                <MDBBtn
-                  tag="a"
-                  color="none"
-                  className="m-3"
-                  style={{ color: "white" }}
-                >
-                  <MDBIcon fab icon="facebook-f" size="lg" />
-                </MDBBtn>
-
-                <MDBBtn
-                  tag="a"
-                  color="none"
-                  className="m-3"
-                  style={{ color: "white" }}
-                >
-                  <MDBIcon fab icon="twitter" size="lg" />
-                </MDBBtn>
-                <MDBBtn
-                  tag="a"
-                  color="none"
-                  className="m-3"
-                  style={{ color: "white" }}
-                >
-                  <MDBIcon fab icon="google" size="lg" />
-                </MDBBtn>
-              </div>
+              <div className="d-flex flex-row mt-3 mb-5"></div>
               <div>
                 <p className="mb-0">
-                  Do you have an account?{" "}
+                  ¿Ya tienes una cuenta?{" "}
                   <a href="/login" className="text-white-50 fw-bold">
-                    Log In
+                    Iniciar sesión
                   </a>
                 </p>
               </div>
