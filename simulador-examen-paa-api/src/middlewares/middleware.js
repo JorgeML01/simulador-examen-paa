@@ -9,7 +9,6 @@ require("dotenv").config();
  * @returns {Object} - The response object with a status code and message if the token is invalid or missing, otherwise calls the next middleware function.
  */
 function authenticateToken(req, res, next) {
-  req.headers["authorization"] = "123";
   const token = req.headers["authorization"];
   console.log(token);
 
