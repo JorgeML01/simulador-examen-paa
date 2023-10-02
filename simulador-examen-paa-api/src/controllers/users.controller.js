@@ -65,7 +65,7 @@ async function login(req, res) {
     else if (!isPassword(password)) errorMessages.push("Invalid password.");
 
     if (errorMessages.length) {
-      res.status(HTPP.BAD_REQUEST).send({ error: errorMessages });
+      res.status(HTTPCodes.BAD_REQUEST).send({ error: errorMessages });
     } else {
       const [credentials] = await getCredentials(email);
 
@@ -86,7 +86,7 @@ async function login(req, res) {
 
         const refreshToken = jwt.sign(
           { email, id: credentials.id, name: credentials.name },
-          process.env.ACCESS_TOKEN_SECRET,
+          process.env.REFRESH_TOKEN_SECRET,
           { expiresIn: "1m" }
         );
 
