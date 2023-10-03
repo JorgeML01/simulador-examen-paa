@@ -17,3 +17,14 @@
   margin-bottom: 6%;
   width: 45%;
 }
+
+/* Hover */
+.individual-card:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.individual-card-last:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}

@@ -13,7 +13,7 @@ function DashboardCards() {
             content.
           </Card.Text>
           <button type="button" class="btn btn-dark">
-            Dark
+            Probar
           </button>
         </Card.Body>
       </Card>
@@ -26,7 +26,7 @@ function DashboardCards() {
             content.
           </Card.Text>
           <button type="button" class="btn btn-dark">
-            Dark
+            Probar
           </button>
         </Card.Body>
       </Card>
@@ -42,7 +42,7 @@ function DashboardCards() {
             content.
           </Card.Text>
           <button type="button" class="btn btn-dark">
-            Dark
+            Probar
           </button>
         </Card.Body>
       </Card>
@@ -55,7 +55,7 @@ function DashboardCards() {
             content.
           </Card.Text>
           <button type="button" class="btn btn-dark">
-            Dark
+            Probar
           </button>
         </Card.Body>
       </Card>
