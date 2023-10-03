@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import jwt_decode from "jwt-decode";
 import MainCarousel from "../../components/Carousel/";
+import DashboardCards from "../../components/DashboardCards";
 import "./styles.css";
 
 function Dashboard() {
@@ -25,6 +26,7 @@ function Dashboard() {
     <>
       <div className="welcome-message">{welcomeMessage}</div>
       <MainCarousel />
+      <DashboardCards />
     </>
   );
 }

@@ -1,0 +1,19 @@
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 2%;
+}
+
+.individual-card {
+  margin-top: 3%;
+  width: 45%;
+}
+
+.individual-card-last {
+  margin-top: 3%;
+  margin-bottom: 6%;
+  width: 45%;
+}
