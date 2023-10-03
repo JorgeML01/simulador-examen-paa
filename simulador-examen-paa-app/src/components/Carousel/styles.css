@@ -1,0 +1,15 @@
+@media (min-width: 992px) {
+  /* Aplica estilos solo a dispositivos grandes (>= 992px) */
+  .lessWidth {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.carousel-image {
+  height: 500px; /* Set a fixed height for the images */
+}
+
+.carousel-item img {
+  width: 100%; /* Ajusta el ancho de las imágenes al 100% */
+}

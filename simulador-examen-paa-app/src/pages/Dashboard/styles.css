@@ -1,0 +1,8 @@
+.welcome-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Cambia el color según tu preferencia */
+  margin-bottom: 20px; /* Añade un espacio después del mensaje de bienvenida */
+  text-align: center;
+  margin-top: 5%;
+}
