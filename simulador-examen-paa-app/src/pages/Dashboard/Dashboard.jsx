@@ -11,11 +11,19 @@ function Dashboard() {
   if (tokenAccess && tokenRefresh) {
     decodedToken = jwt_decode(tokenAccess);
   }
+
   const name = decodedToken.name;
+  let welcomeMessage = "";
+
+  if (name) {
+    welcomeMessage = "¡Bienvenido, " + name + "!";
+  } else {
+    welcomeMessage = "¡Bienvenido!";
+  }
 
   return (
     <>
-      <div className="welcome-message">¡Bienvenido, {name}!</div>
+      <div className="welcome-message">{welcomeMessage}</div>
       <MainCarousel />
     </>
   );
