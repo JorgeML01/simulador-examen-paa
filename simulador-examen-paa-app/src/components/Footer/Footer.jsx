@@ -120,9 +120,10 @@ function MainFooter() {
       >
         © 2023 Copyright:
         <a
-          className="text-reset fw-bold"
           href="https://github.com/JorgeML01"
           target="_blank"
+          rel="noopener noreferrer"
+          className="text-reset fw-bold"
         >
           Jorge Matute
         </a>
