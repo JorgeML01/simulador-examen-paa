@@ -43,7 +43,7 @@ function NavigationBar() {
         <Navbar.Brand href="/">Simulador Admisiones UNAH</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
+          <Nav className="me-auto">
             <Nav.Link href="/" className="color-container-nav">
               Inicio
             </Nav.Link>
