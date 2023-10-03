@@ -1,4 +1,5 @@
 import NavigationBar from "./components/Navbar";
+import MainFooter from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/informacion" element={""} />
         <Route path="/Simuladores" element={""} />
       </Routes>
+      <MainFooter />
     </Router>
   );
 }
