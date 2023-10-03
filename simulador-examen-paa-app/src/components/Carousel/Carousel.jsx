@@ -1,7 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import miImagen1 from "../../images/major.jpg";
-import miImagen2 from "../../images/math.webp";
-import miImagen3 from "../../images/unah.webp";
+import miImagen2 from "../../images/unah.webp";
 import "./styles.css";
 
 function MainCarousel() {
@@ -11,7 +10,7 @@ function MainCarousel() {
         <img className="carousel-image " src={miImagen1} alt="First slide" />
       </Carousel.Item>
       <Carousel.Item>
-        <img className=" carousel-image " src={miImagen3} alt="Third slide" />
+        <img className=" carousel-image " src={miImagen2} alt="Third slide" />
       </Carousel.Item>
     </Carousel>
   );
