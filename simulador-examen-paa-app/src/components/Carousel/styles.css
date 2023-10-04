@@ -13,3 +13,10 @@
 .carousel-item img {
   width: 100%; /* Ajusta el ancho de las imágenes al 100% */
 }
+
+@media (max-width: 767px) {
+  .carousel-image {
+    height: 250px;
+    width: 70%;
+  }
+}
