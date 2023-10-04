@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Ranking from "./pages/Ranking";
+import Majors from "./pages/Majors";
 import "./styles.css";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Register />} />
         <Route path="/ranking" element={<Ranking />} />
-        <Route path="/carreras" element={""} />
+        <Route path="/carreras" element={<Majors />} />
         <Route path="/PAA" element={""} />
         <Route path="/PAM" element={""} />
         <Route path="/PCCNS" element={""} />

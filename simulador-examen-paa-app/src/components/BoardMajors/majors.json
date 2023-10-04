@@ -1,0 +1,87 @@
+[
+    {
+      "carrera": "Licenciatura en Informática Administrativa",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Periodismo",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Pedagogía",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Letras",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Sociología",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Química Industrial",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Matemáticas",
+      "puntos": 700
+    },
+    {
+      "carrera": "Enfermería",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Economía",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Contaduría Pública y Finanzas",
+      "puntos": 700
+    },
+    {
+      "carrera": "Técnico Universitario en Microfinanzas (Telecentro)",
+      "puntos": 700
+    },
+    {
+      "carrera": "Licenciatura en Psicología",
+      "puntos": 900
+    },
+    {
+      "carrera": "Licenciatura en Derecho",
+      "puntos": 900
+    },
+    {
+      "carrera": "Licenciatura en Administración de Empresas",
+      "puntos": 900
+    },
+    {
+      "carrera": "Ingeniería Civil",
+      "puntos": 1000
+    },
+    {
+      "carrera": "Ingeniería Mecánica Industrial",
+      "puntos": 1000
+    },
+    {
+      "carrera": "Ingeniería Eléctrica Industrial",
+      "puntos": 1000
+    },
+    {
+      "carrera": "Ingeniería Industrial",
+      "puntos": 1000
+    },
+    {
+      "carrera": "Ingeniería en Sistemas",
+      "puntos": 1000
+    },
+    {
+      "carrera": "Odontología",
+      "puntos": 1000
+    },
+    {
+      "carrera": "Medicina",
+      "puntos": 1100
+    }
+  ]
+  

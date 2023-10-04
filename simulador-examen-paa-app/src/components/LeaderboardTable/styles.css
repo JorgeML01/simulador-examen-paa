@@ -1,63 +1,49 @@
 /* styles.css */
 
-/* Style the leaderboard container */
-#leaderboard-container {
-  max-width: 90%;
+#majors-container {
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
+}
+
+#majors-header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.majors-table {
+  width: 100%;
+  border-collapse: collapse;
   background-color: #f7f7f7;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 15%;
-  margin-top: 5%;
 }
 
-/* Style the leaderboard header */
-#leaderboard-header {
-  text-align: center;
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Style leaderboard table */
-.leaderboard-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-/* Style leaderboard table header */
-.leaderboard-table th {
+.majors-table th {
   background-color: #333;
   color: #fff;
   text-align: left;
   padding: 10px;
 }
 
-/* Style leaderboard table rows */
-.leaderboard-table tr {
-  background-color: #fff;
-}
-
-/* Style leaderboard table data */
-.leaderboard-table td {
+.majors-table th,
+.majors-table td {
   padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Style the rank number */
-.rank-number {
-  font-weight: bold;
-  color: #333;
+.majors-table tbody tr:hover {
+  background-color: #f2f2f2;
 }
 
-/* Style the user ID */
-.user-id {
-  font-weight: bold;
+.career {
   color: #333;
+  font-weight: bold;
 }
 
-/* Style the score */
-.score {
-  font-weight: bold;
+.points {
   color: #333;
+  font-weight: bold;
 }
