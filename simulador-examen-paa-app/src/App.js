@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Ranking from "./pages/Ranking";
 import Majors from "./pages/Majors";
+import Simulator from "./pages/Simulator";
 import "./styles.css";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <Route path="/PAM" element={""} />
         <Route path="/PCCNS" element={""} />
         <Route path="/informacion" element={""} />
-        <Route path="/Simuladores" element={""} />
+        <Route path="/Simuladores" element={<Simulator />} />
       </Routes>
       <MainFooter />
     </Router>
