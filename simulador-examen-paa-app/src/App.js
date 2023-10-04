@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Ranking from "./pages/Ranking";
 import "./styles.css";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Register />} />
-        <Route path="/ranking" element={""} />
+        <Route path="/ranking" element={<Ranking />} />
         <Route path="/carreras" element={""} />
         <Route path="/PAA" element={""} />
         <Route path="/PAM" element={""} />

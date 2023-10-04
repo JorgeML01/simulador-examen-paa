@@ -18,7 +18,6 @@ const knex = require("knex")({
 
 const registerUser = async (user) => {
   try {
-    // Utiliza una consulta parametrizada para insertar un nuevo usuario
     return await knex("users").insert({
       email: user.email,
       password: user.encryptedPassword,
