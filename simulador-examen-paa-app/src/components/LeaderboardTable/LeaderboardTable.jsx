@@ -1,38 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./styles.css"; // Import the CSS file
 
-function LeaderboardTable() {
+const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
 
-  const fetchLeaderboard = async () => {
-    try {
-      const response = await axios.get(
-        "https://ill-red-giraffe-tux.cyclic.cloud/PAM"
-      );
-      const data = response.data;
-      setLeaderboard(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    fetchLeaderboard();
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://ill-red-giraffe-tux.cyclic.cloud/PAM"
+        );
+        const data = response.data;
+        setLeaderboard(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
-    <div>
-      <h1>Leaderboard</h1>
-      {leaderboard.map((user) => (
-        <div key={user.id_user}>
-          <p>
-            id_user: {user.id_user} - Name: {user.name} - Score:
-            {user.highest_score}
-          </p>
-        </div>
-      ))}
+    <div id="leaderboard-container">
+      <h1 id="leaderboard-header">Leaderboard</h1>
+      <table className="leaderboard-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>User ID</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {leaderboard.map((user, index) => (
+            <tr key={user.id_user}>
+              <td className="rank-number">{index + 1}</td>
+              <td className="user-id">{user.name}</td>
+              <td className="user-id">{user.id_user}</td>
+              <td className="score">{user.highest_score}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
-}
+};
 
-export default LeaderboardTable;
+export default Leaderboard;
