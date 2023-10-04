@@ -38,6 +38,7 @@ function NavigationBar() {
       collapseOnSelect
       expand="lg"
       className="bg-body-tertiary font-size-nav"
+      sticky="top"
     >
       <Container>
         <Navbar.Brand href="/">Simulador Admisiones UNAH</Navbar.Brand>

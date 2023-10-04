@@ -21,9 +21,9 @@ function DashboardCards() {
                   content.
                 </Card.Text>
                 <div className="mt-auto d-flex justify-content-center">
-                  <button type="button" className="btn btn-dark button-card">
+                  <a href="/PAA" className="btn btn-dark button-card">
                     Explorar
-                  </button>
+                  </a>
                 </div>
               </Card.Body>
             </Card>
@@ -40,9 +40,9 @@ function DashboardCards() {
                   content.
                 </Card.Text>
                 <div className="mt-auto d-flex justify-content-center">
-                  <button type="button" className="btn btn-dark button-card">
+                  <a href="/PAM" className="btn btn-dark button-card">
                     Explorar
-                  </button>
+                  </a>
                 </div>
               </Card.Body>
             </Card>
@@ -62,9 +62,9 @@ function DashboardCards() {
                   content.
                 </Card.Text>
                 <div className="mt-auto d-flex justify-content-center">
-                  <button type="button" className="btn btn-dark button-card">
+                  <a href="/PCCNS" className="btn btn-dark button-card">
                     Explorar
-                  </button>
+                  </a>
                 </div>
               </Card.Body>
             </Card>
@@ -79,9 +79,9 @@ function DashboardCards() {
                   content.
                 </Card.Text>
                 <div className="mt-auto d-flex justify-content-center">
-                  <button type="button" className="btn btn-dark button-card">
+                  <a href="/ranking" className="btn btn-dark button-card">
                     Explorar
-                  </button>
+                  </a>
                 </div>
               </Card.Body>
             </Card>
