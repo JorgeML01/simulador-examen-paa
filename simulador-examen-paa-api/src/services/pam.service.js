@@ -19,10 +19,11 @@ const getHighestScores = async () => {
   try {
     const scores = await knex
       .select("pam.id_user", "users.name")
-      .max("pam.score as highest_score")
+      .max({ highest_score: "pam.score" })
       .from("pam")
       .join("users", "users.id", "pam.id_user")
-      .groupBy("pam.id_user", "users.name");
+      .groupBy("pam.id_user", "users.name")
+      .orderBy("highest_score", "desc");
 
     return scores;
   } catch (error) {
