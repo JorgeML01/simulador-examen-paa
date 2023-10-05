@@ -1,9 +1,9 @@
-import LeaderboardTable from "../../components/LeaderboardTable/";
+import AllLeaderboards from "../../components/AllLeaderboards";
 
 function Ranking() {
   return (
     <div>
-      <LeaderboardTable />
+      <AllLeaderboards />
     </div>
   );
 }

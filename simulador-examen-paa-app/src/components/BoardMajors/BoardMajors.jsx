@@ -1,6 +1,7 @@
 import React from "react";
 import data from "./majors.json";
 import "./styles.css";
+import "../LeaderboardTablePAM/styles.css";
 
 function BoardMajors() {
   return (
