@@ -7,7 +7,9 @@ import Register from "./pages/Register";
 import Ranking from "./pages/Ranking";
 import Majors from "./pages/Majors";
 import Simulator from "./pages/Simulator";
-import PAM from "./pages/PAM";
+import RankPAM from "./pages/RankPAM";
+import RankPAA from "./pages/RankPAA";
+import RankPCCNS from "./pages/RankPCCNS";
 import "./styles.css";
 
 function App() {
@@ -20,9 +22,9 @@ function App() {
         <Route path="/registro" element={<Register />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/carreras" element={<Majors />} />
-        <Route path="/PAA" element={""} />
-        <Route path="/PAM" element={<PAM />} />
-        <Route path="/PCCNS" element={""} />
+        <Route path="/PAA" element={<RankPAA />} />
+        <Route path="/PAM" element={<RankPAM />} />
+        <Route path="/PCCNS" element={<RankPCCNS />} />
         <Route path="/informacion" element={""} />
         <Route path="/Simuladores" element={<Simulator />} />
       </Routes>

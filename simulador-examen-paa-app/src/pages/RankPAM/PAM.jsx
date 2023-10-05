@@ -1,6 +1,6 @@
 import LeaderboardPAM from "../../components/LeaderboardTablePAM";
 
-function PAM() {
+function RankPAM() {
   return (
     <div>
       <LeaderboardPAM />
@@ -8,4 +8,4 @@ function PAM() {
   );
 }
 
-export default PAM;
+export default RankPAM;
