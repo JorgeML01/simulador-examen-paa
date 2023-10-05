@@ -45,6 +45,9 @@ function NavigationBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+            <Nav.Link href="/perfil" className="color-container-nav">
+              Perfil
+            </Nav.Link>
             <Nav.Link href="/ranking" className="color-container-nav">
               Ranking
             </Nav.Link>

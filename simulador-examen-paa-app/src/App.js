@@ -25,8 +25,11 @@ function App() {
         <Route path="/PAA" element={<RankPAA />} />
         <Route path="/PAM" element={<RankPAM />} />
         <Route path="/PCCNS" element={<RankPCCNS />} />
-        <Route path="/informacion" element={""} />
         <Route path="/Simuladores" element={<Simulator />} />
+        <Route path="/SimuladorPAM" element={""} />
+        <Route path="/SimuladorPAA" element={""} />
+        <Route path="/SimuladorPCCNS" element={""} />
+        <Route path="/perfil" element={""} />
       </Routes>
       <MainFooter />
     </Router>

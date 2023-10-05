@@ -21,7 +21,7 @@ function DashboardCards() {
                   content.
                 </Card.Text>
                 <div className="mt-auto d-flex justify-content-center">
-                  <a href="/PAA" className="btn btn-dark button-card">
+                  <a href="/SimuladorPAA" className="btn btn-dark button-card">
                     Explorar
                   </a>
                 </div>
@@ -40,7 +40,7 @@ function DashboardCards() {
                   content.
                 </Card.Text>
                 <div className="mt-auto d-flex justify-content-center">
-                  <a href="/PAM" className="btn btn-dark button-card">
+                  <a href="/SimuladorPAM" className="btn btn-dark button-card">
                     Explorar
                   </a>
                 </div>
@@ -62,7 +62,10 @@ function DashboardCards() {
                   content.
                 </Card.Text>
                 <div className="mt-auto d-flex justify-content-center">
-                  <a href="/PCCNS" className="btn btn-dark button-card">
+                  <a
+                    href="/SimuladorPCCNS"
+                    className="btn btn-dark button-card"
+                  >
                     Explorar
                   </a>
                 </div>
