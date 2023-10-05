@@ -23,7 +23,7 @@ const LeaderboardPAM = () => {
 
   return (
     <div id="leaderboard-container">
-      <h1 id="leaderboard-header">Leaderboard</h1>
+      <h1 id="leaderboard-header">Clasificación - PAM</h1>
       <table className="leaderboard-table">
         <thead>
           <tr>

@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const PamController = require("../controllers/pam.controller");
+const PAMController = require("../controllers/pam.controller");
 
-router.get("/PAM", PamController.getPamHighestScores);
+router.get("/PAM", PAMController.getPamHighestScores);
 
 module.exports = router;
