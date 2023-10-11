@@ -9,7 +9,7 @@ const LeaderboardPAA = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://ill-red-giraffe-tux.cyclic.cloud/PAA"
+          "http://ill-red-giraffe-tux.cyclic.cloud/PAA"
         );
         const data = response.data;
         setLeaderboard(data);
